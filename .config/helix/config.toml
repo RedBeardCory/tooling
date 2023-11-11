@@ -1,0 +1,4 @@
+theme = "nightfox"
+
+[editor.file-picker]
+hidden = false

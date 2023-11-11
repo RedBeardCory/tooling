@@ -1,0 +1,28 @@
+[[language]]
+name = "rust"
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+# python lang setup. bit complicated as I want to use a virtual env
+[[language]]
+name = "python"
+language-servers = [ "automagic-venv", "pyright", "ruff" ]
+
+[language-server.automagic-venv]
+command = "~/.config/helix/scripts/automagic-venv.sh"
+
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+
+[language-server.ruff]
+command = "ruff-lsp"
+
+[language-server.ruff.config.settings]
+# add any ignores here
+args = ["--config", "path/to/ruff.toml"]
+
+[language.formatter]
+command = "black"
+args = ["--quiet", "--"]
